@@ -77,3 +77,18 @@ cc_library(
         "//Foundational/iwstring:iwstring",
     ],
 )
+
+cc_library(
+    name = "iw_tabular_data",
+    visibility = ["//visibility:public"],
+    srcs = [
+        "iw_tabular_data.cc",
+    ],
+    hdrs = [
+        "iw_tabular_data.h",
+    ],
+    deps = [
+        "//Foundational/data_source:iwstring_data_source",
+        "//Foundational/iwbits:iwbits",
+    ],
+)

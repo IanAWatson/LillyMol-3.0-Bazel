@@ -16,6 +16,22 @@ cc_binary(
 )
 
 cc_binary(
+    name = "correlate",
+    srcs = [
+       "correlate.cc",
+    ],
+    deps = [
+        "//Foundational/iwstring:iwstring",
+        "//Foundational/data_source:iwstring_data_source",
+        "//Foundational/iwmisc:iwmisc",
+        "//Foundational/iwmisc:iw_tabular_data",
+    ],
+    linkopts = [
+        "-lz",
+    ],
+)
+
+cc_binary(
     name = "fetch_smiles_quick",
     srcs = [
         "fetch_smiles_quick.cc",

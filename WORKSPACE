@@ -14,6 +14,7 @@ http_archive(
     name = "com_google_protobuf",
     strip_prefix = "protobuf-master",
     urls = ["https://github.com/protocolbuffers/protobuf/archive/master.zip"],
+    sha256 = "5994ef60bf912bd33883581d33230292b4c1f4ee1e6f0fcfb547c0faf5a40212",
 )
 # This com_google_protobuf_cc repository is required for cc_proto_library
 # rule. It provides protobuf C++ runtime. Note that it actually is the same
