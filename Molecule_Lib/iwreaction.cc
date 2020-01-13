@@ -1535,7 +1535,7 @@ Reaction_Site::construct_from_msi_object(const msi_object & msi,
       }
 
       const int amap = a->atom_map_number();
-      if (a >= 0)
+      if (amap >= 0)
         atom_map_to_unique_id[amap] = i;
 
     }

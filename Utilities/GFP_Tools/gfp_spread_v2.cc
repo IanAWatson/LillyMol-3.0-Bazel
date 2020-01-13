@@ -1463,9 +1463,18 @@ fpobj_spread (int argc, char ** argv)
   return 0;
 }
 
+// Needed to help linking. No idea...
+static void ForLinkingDoNotUse()
+{
+  Set_of_Sparse_Fingerprint_Collection_Profile notused;
+}
+
 int
 main (int argc, char ** argv)
 {
+  if (argc == -5121)
+    ForLinkingDoNotUse();
+
   int rc = fpobj_spread(argc, argv);
 
 #ifdef USE_IWMALLOC
@@ -1474,3 +1483,4 @@ main (int argc, char ** argv)
 
   return rc;
 }
+

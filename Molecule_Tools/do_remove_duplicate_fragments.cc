@@ -71,17 +71,17 @@ do_remove_duplicate_fragments (Molecule & m, int & fragments_removed)
     return 1;
   }
 
-  int matoms = m.natoms ();
+  int matoms = m.natoms();
 
   int * fragment_membership = new int[matoms];
-  int * fragment_size = new_int (matoms);
+  int * fragment_size = new_int(matoms);
 
   m.fragment_membership (fragment_membership);
 
   int rc = do_remove_duplicate_fragments (m, fragment_membership, fragment_size, fragments_removed);
 
-  delete fragment_membership;
-  delete fragment_size;
+  delete [] fragment_membership;
+  delete [] fragment_size;
 
   return rc;
 }

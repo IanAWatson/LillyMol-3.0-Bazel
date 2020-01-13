@@ -47,6 +47,7 @@ class Min_Max_Specifier : public iwarchive<T>
     int initialise (const const_IWSubstring &);
 
     int add (T);    // we override this so we can maintain _is_set
+    int add_if_not_already_present(T);  // must override.
 
     int set_min (T v);
     int set_max (T v);
@@ -88,7 +89,7 @@ Min_Max_Specifier<T>::Min_Max_Specifier ()
 template <typename T>
 Min_Max_Specifier<T>::Min_Max_Specifier (const T v)
 {
-  add (v);
+  add(v);
 
   _is_set = 1;
 
@@ -107,6 +108,15 @@ template <typename T>
 Min_Max_Specifier<T>::~Min_Max_Specifier ()
 {
 //cerr << "Deleting Min_Max_Specifier with " << _number_elements << " items, _is_set?" << _is_set << " _match_any? " << _match_any << endl;
+
+  if (!ok()) {
+    cerr << "Deleting bad Min_Max_Specifier\n";
+    cerr << _number_elements << " items\n";
+    cerr << _min_val.is_set() << " _min_val.is_set()\n";
+    cerr << _max_val.is_set() << " _max_val.is_set()\n";
+    cerr << _match_any << " _match_any\n";
+
+  }
 
   assert (ok ());
 
@@ -208,6 +218,18 @@ Min_Max_Specifier<T>::add (T extra)
   _match_any = 0;
 
   return 1;
+}
+
+template <typename T>
+int
+Min_Max_Specifier<T>::add_if_not_already_present(T extra)
+{
+  if (iwarchive<T>::contains(extra)) {
+    cerr << "Min_Max_Specifier:add_if_not_already_present:already present\n";
+    return 0;
+  }
+
+  return this->add(extra);
 }
 
 /*

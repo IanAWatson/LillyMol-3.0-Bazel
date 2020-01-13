@@ -375,7 +375,7 @@ Sparse_Fingerprint::tversky (const Sparse_Fingerprint & rhs,
     
   int bits_in_common = 0;
 
-  register unsigned int b;   // declare here for efficiency
+  unsigned int b;   // declare here for efficiency
   for (int i = 0, j = 0; i < n1; i++)
   {
     b = b1[i];
@@ -522,7 +522,7 @@ Sparse_Fingerprint::_tanimoto_with_counts(const Sparse_Fingerprint & rhs) const
 
   int bits_in_common = 0;
 
-  register unsigned int b;
+  unsigned int b;
   for (int i = 0, j = 0; i < n1; i++)
   {
     b = b1[i];
@@ -615,7 +615,7 @@ Sparse_Fingerprint::tanimoto_with_unlimited_counts(const Sparse_Fingerprint & rh
 
   int bits_in_common = 0;
 
-  register unsigned int b;
+  unsigned int b;
   for (int i = 0, j = 0; i < n1; i++)
   {
     b = b1[i];
@@ -697,7 +697,7 @@ Sparse_Fingerprint::tanimoto_binary(const Sparse_Fingerprint & rhs) const
 
   int bits_in_common = 0;
 
-  register unsigned int b;
+  unsigned int b;
   for (int i = 0, j = 0; i < n1; ++i)
   {
     b = b1[i];
@@ -782,7 +782,7 @@ Sparse_Fingerprint::_tanimoto_with_counts (const Sparse_Fingerprint & rhs) const
 
   int bits_in_common = 0;
 
-  register unsigned int b;
+  unsigned int b;
   for (int i = 0, j = 0; i < n1; i++)
   {
     b = b1[i];
@@ -876,7 +876,7 @@ Sparse_Fingerprint::_tanimoto_with_counts (const Sparse_Fingerprint & rhs) const
 
   int bits_in_common = 0;
 
-  register unsigned int b;
+  unsigned int b;
   while (b1 < b1end)
   {
     b = *b1;
@@ -967,7 +967,7 @@ Sparse_Fingerprint::cosine_measure (const Sparse_Fingerprint & rhs) const
 
   int d1d2 = 0;
 
-  register unsigned int b;
+  unsigned int b;
   for (int i = 0, j = 0; i < n1; i++)
   {
     b = b1[i];
@@ -1021,7 +1021,7 @@ Sparse_Fingerprint::dot_product (const Sparse_Fingerprint & rhs) const
 
   int d1d2 = 0;
 
-  register unsigned int b;
+  unsigned int b;
   for (int i = 0, j = 0; i < n1; i++)
   {
     b = b1[i];
@@ -1441,7 +1441,7 @@ Sparse_Fingerprint::manhattan_distance (const Sparse_Fingerprint & rhs) const
 
   unsigned int d = 0;
 
-  register unsigned int b;
+  unsigned int b;
   int j = 0;
   for (int i = 0; i < n1; i++)
   {
@@ -1549,7 +1549,7 @@ Sparse_Fingerprint::soergel_variant_similarity (const Sparse_Fingerprint & rhs) 
   double rc = 0.0;
   int p = 0;
 
-  register unsigned int b;
+  unsigned int b;
   int j = 0;
   for (int i = 0; i < n1; i++)
   {
@@ -1661,7 +1661,7 @@ Sparse_Fingerprint::soergel_similarity (const Sparse_Fingerprint & rhs) const
   int numerator = 0;
   int denominator = 0;
 
-  register unsigned int b;
+  unsigned int b;
   int j = 0;
   for (int i = 0; i < n1; i++)
   {
@@ -1754,7 +1754,7 @@ Sparse_Fingerprint::bits_in_common (const Sparse_Fingerprint & rhs) const
 
   int bits_in_common = 0;
 
-  register unsigned int b;
+  unsigned int b;
   for (int i = 0, j = 0; i < n1; i++)
   {
     b = b1[i];
@@ -1811,7 +1811,7 @@ Sparse_Fingerprint::bits_in_common (const Sparse_Fingerprint & rhs) const
 
   int bits_in_common = 0;
 
-  register unsigned int b;
+  unsigned int b;
   for (int i = 0, j = 0; i < n1; i++)
   {
     b = b1[i];

@@ -1490,14 +1490,19 @@ leader (int argc, char ** argv)
   return 0;
 }
 
+// Needed to help linking. No idea...
+static void ForLinkingDoNotUse()
+{
+  Set_of_Sparse_Fingerprint_Collection_Profile notused;
+}
+
 int
 main (int argc, char ** argv)
 {
-  int rc = leader(argc, argv);
+  if (argc == -51221)
+    ForLinkingDoNotUse();
 
-#ifdef USE_IWMALLOC
-  terse_malloc_status(stderr);
-#endif
+  int rc = leader(argc, argv);
 
   return rc;
 }

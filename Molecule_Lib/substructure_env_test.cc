@@ -355,8 +355,11 @@ TEST_F(TestSubstructureEnv, TestHitsNeeded)
   _smiles = "NC(=N)C(C#N)CC";
 
   ASSERT_TRUE(_m.build_from_smiles(_smiles));
+  cerr << "Built from smiles " << _m.smiles() << endl;
 
   EXPECT_EQ(_query.substructure_search(_m, _sresults), 1);
+
+  cerr << "Did the search\n";
 
   EXPECT_TRUE(_DoPerumationsTests(1));
 }
@@ -416,9 +419,9 @@ TEST_F(TestSubstructureEnv, TestHitsNeededMultipleSitesCorrect)
 
   ASSERT_TRUE(_m.build_from_smiles(_smiles));
 
-  EXPECT_EQ(_query.substructure_search(_m, _sresults), 6);
+  EXPECT_EQ(_query.substructure_search(_m, _sresults), 2);
 
-  EXPECT_TRUE(_DoPerumationsTests(6));
+  EXPECT_TRUE(_DoPerumationsTests(2));
 }
 
 // This time env_matches_can_share_attachment_points is in the environment.
@@ -447,9 +450,9 @@ TEST_F(TestSubstructureEnv, TestHitsNeededMultipleSitesCorrectEnv)
 
   ASSERT_TRUE(_m.build_from_smiles(_smiles));
 
-  EXPECT_EQ(_query.substructure_search(_m, _sresults), 6);
+  EXPECT_EQ(_query.substructure_search(_m, _sresults), 2);
 
-  EXPECT_TRUE(_DoPerumationsTests(6));
+  EXPECT_TRUE(_DoPerumationsTests(2));
 }
 
 TEST_F(TestSubstructureEnv, TestNoOtherSubstituentsAllowed)
@@ -490,7 +493,6 @@ TEST_F(TestSubstructureEnv, TestNoOtherSubstituentsAllowedEnvMatchesOK)
       environment {
         no_other_substituents_allowed: true
         smarts: "N"
-        hits_needed: 1
         attachment {
           attachment_point: 0
           bond: SS_SINGLE_BOND

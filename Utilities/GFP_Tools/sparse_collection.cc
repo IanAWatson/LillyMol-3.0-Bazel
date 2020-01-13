@@ -13,7 +13,7 @@ Sparse_Fingerprint_Collection_Profile::Sparse_Fingerprint_Collection_Profile ()
 }
 
 int
-Sparse_Fingerprint_Collection_Profile::report (std::ostream & output) const
+Sparse_Fingerprint_Collection_Profile::report(std::ostream & output) const
 {
   output << "Sparse fingerprint set contains " << _xref.size () << " bits\n";
   if (_nset.n ())
@@ -23,7 +23,7 @@ Sparse_Fingerprint_Collection_Profile::report (std::ostream & output) const
 }
 
 int
-Set_of_Sparse_Fingerprint_Collection_Profile::report (std::ostream & output) const
+Set_of_Sparse_Fingerprint_Collection_Profile::report(std::ostream & output) const
 {
   output << "Sparse fingerprint summary on " << _number_sparse_fingerprints << " sparse fingerprints\n";
 
@@ -35,7 +35,7 @@ Set_of_Sparse_Fingerprint_Collection_Profile::report (std::ostream & output) con
   return output.good ();
 }
 
-Set_of_Sparse_Fingerprint_Collection_Profile::Set_of_Sparse_Fingerprint_Collection_Profile ()
+Set_of_Sparse_Fingerprint_Collection_Profile::Set_of_Sparse_Fingerprint_Collection_Profile()
 {
   _number_sparse_fingerprints = 0;
 
@@ -44,7 +44,7 @@ Set_of_Sparse_Fingerprint_Collection_Profile::Set_of_Sparse_Fingerprint_Collecti
   return;
 }
 
-Set_of_Sparse_Fingerprint_Collection_Profile::~Set_of_Sparse_Fingerprint_Collection_Profile ()
+Set_of_Sparse_Fingerprint_Collection_Profile::~Set_of_Sparse_Fingerprint_Collection_Profile()
 {
   if (NULL != _sfcp)
     delete [] _sfcp;
@@ -55,7 +55,7 @@ Set_of_Sparse_Fingerprint_Collection_Profile::~Set_of_Sparse_Fingerprint_Collect
 }
 
 int
-Set_of_Sparse_Fingerprint_Collection_Profile::resize (int s)
+Set_of_Sparse_Fingerprint_Collection_Profile::resize(int s)
 {
   assert (s > 0);
 
@@ -76,7 +76,7 @@ Set_of_Sparse_Fingerprint_Collection_Profile::resize (int s)
 }
 
 int
-Set_of_Sparse_Fingerprint_Collection_Profile::build_profile (const IW_General_Fingerprint & fp)
+Set_of_Sparse_Fingerprint_Collection_Profile::build_profile(const IW_General_Fingerprint & fp)
 {
   if (0 == _number_sparse_fingerprints)
   {
@@ -102,7 +102,7 @@ Set_of_Sparse_Fingerprint_Collection_Profile::build_profile (const IW_General_Fi
 }
 
 int
-Sparse_Fingerprint_Collection_Profile::build_profile (const Sparse_Fingerprint & fp)
+Sparse_Fingerprint_Collection_Profile::build_profile(const Sparse_Fingerprint & fp)
 {
   _nset.extra (fp.nset ());
 
@@ -245,7 +245,7 @@ Sparse_Fingerprint_Collection_Profile::convert_to_fixed_width (const Sparse_Fing
 //#define DEBUG_CONVERT_TO_FIXED_WIDTH
 
 int
-Sparse_Fingerprint_Collection_Profile::convert_to_fixed_width (const Sparse_Fingerprint & fpfrom,
+Sparse_Fingerprint_Collection_Profile::convert_to_fixed_width(const Sparse_Fingerprint & fpfrom,
                                         Fixed_Size_Counted_Fingerprint_uchar & fpto,
                                         int & extra_bits,
                                         int & extra_count) const
@@ -293,7 +293,7 @@ Sparse_Fingerprint_Collection_Profile::convert_to_fixed_width (const Sparse_Fing
 }
 
 int
-Sparse_Fingerprint_Collection_Profile::convert_to_fixed_width (const Sparse_Fingerprint & fpfrom,
+Sparse_Fingerprint_Collection_Profile::convert_to_fixed_width(const Sparse_Fingerprint & fpfrom,
                                         Fixed_Size_Counted_Fingerprint_uint & fpto,
                                         int & extra_bits,
                                         int & extra_count) const

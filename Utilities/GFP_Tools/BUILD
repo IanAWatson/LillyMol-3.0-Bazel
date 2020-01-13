@@ -6,6 +6,7 @@ cc_binary(
     ],
     deps = [
         "gfp",
+        ":sparse_collection",
         "//Foundational/accumulator:accumulator",
         "//Foundational/iwmisc:iwmisc",
     ],
@@ -23,6 +24,7 @@ cc_binary(
         ":gfp",
         ":spread_v2",
         ":smiles_id_dist",
+        ":sparse_collection",
         "//Foundational/accumulator:accumulator",
         "//Foundational/iwmisc:iwmisc",
     ],
@@ -73,6 +75,7 @@ cc_binary(
     deps = [
         ":gfp",
         ":build_pool",
+        ":sparse_collection",
         "//Foundational/histogram:iwhistogram",
         "//Foundational/iwmisc:iwmisc",
     ],
